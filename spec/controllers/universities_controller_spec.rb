@@ -7,6 +7,16 @@ RSpec.describe UniversitiesController, type: :controller do
       get :index
       expect(response).to have_http_status(:success)
     end
+
+    it 'sets the universities instance variable' do
+      get :index
+      expect(assigns(:universities)).to eq([])
+    end
+
+    it 'renders the index template' do
+      get :index
+      expect(response).to render_template(:index)
+    end
   end
 
   describe "GET #show" do
