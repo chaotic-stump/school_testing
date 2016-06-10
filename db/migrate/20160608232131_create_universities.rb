@@ -3,7 +3,7 @@ class CreateUniversities < ActiveRecord::Migration
     create_table :universities do |t|
       t.string :name
       t.integer :class_size
-      t.string :year_est
+      t.integer :year_est
 
       t.timestamps null: false
     end
